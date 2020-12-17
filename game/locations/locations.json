@@ -1,0 +1,24 @@
+{
+    "start": {
+        "title": "Стартовая локация",
+        "options": [
+            {
+                "condition": "True",
+                "label": "Вариант 1",
+                "goto": "place_1",
+                "side_effect": "x = 1"
+            }
+        ]
+    },
+    "place_1": {
+        "title": "Другая локация",
+        "options": [
+            {
+                "condition": "True",
+                "label": "Вариант 2",
+                "goto": "end",
+                "side_effect": "x = 1"
+            }
+        ]
+    }
+}
