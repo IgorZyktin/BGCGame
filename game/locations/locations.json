@@ -12,6 +12,7 @@
     },
     "place_1": {
         "title": "Другая локация",
+        "initial_title": "Другая локация",
         "options": [
             {
                 "condition": "True",
