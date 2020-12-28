@@ -19,6 +19,8 @@ Context = NewType('Context', Dict[str, Any])
 Location = NewType('Location', Dict[str, Any])
 Locations = Dict[str, Location]
 
+BASE_PATH = os.path.join('game', 'locations')
+
 
 def clear_screen_windows() -> None:
     """Очистить содержимое экрана на Windows.
@@ -47,7 +49,7 @@ def get_locations() -> Locations:
     """
     locations = {}
 
-    for path, dirs, filenames in os.walk(os.path.join('game', 'locations')):
+    for path, dirs, filenames in os.walk(BASE_PATH):
         for filename in filenames:
             full_path = os.path.join(path, filename)
 
@@ -186,14 +188,11 @@ def main():
     context = get_context()
     position = 'start'
 
-    while True:
+    while position != 'end':
         location = enter_location(position, locations, context)
         option = ask_user(location, context)
         apply_side_effect(option, context)
-        position = option.get('goto')
-
-        if position == 'end' or not position:
-            break
+        position = option['goto']
 
     print('Спасибо за игру!')
 
