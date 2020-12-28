@@ -1,6 +1,6 @@
 {
     "start": {
-        "title": "Стартовая локация",
+        "header": "Стартовая локация",
         "options": [
             {
                 "condition": "True",
@@ -11,7 +11,7 @@
         ]
     },
     "place_1": {
-        "title": "Другая локация",
+        "header": "Другая локация",
         "initial_title": "Другая локация",
         "options": [
             {
